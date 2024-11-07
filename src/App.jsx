@@ -1,5 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
+import { evaluate } from 'mathjs';
+
 
 export default function App() {
   const [Input, setInput] = useState('');
@@ -34,7 +36,7 @@ export default function App() {
   const handleEqual = () => {
     let ans = '';
     try {
-      ans = eval(Input).toString();
+      ans = evaluate (Input).toString();
     } catch (error) {
       ans = 'Error';
     }
